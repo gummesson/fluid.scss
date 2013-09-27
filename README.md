@@ -39,7 +39,7 @@ The `$breakpoint` parameter needs to match the one defined in the `$breakpoints`
 ~~~ scss
 @include fluid-point($breakpoint) {
   // ...  
-};
+}
 ~~~
 The `$breakpoint` parameter needs to match the one defined in the `$breakpoints` variable.
 
