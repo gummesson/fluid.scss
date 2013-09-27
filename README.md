@@ -79,7 +79,7 @@ $lap-widths: (
 );
 ~~~
 
-##### Mixin
+##### Mixins
 
 ~~~ scss
 @include fluid-widths("default", $default-widths, "none");
@@ -127,7 +127,7 @@ $lap-widths: (
 );
 ~~~
 
-##### Mixin
+##### Mixins
 
 ~~~ scss
 @include fluid-widths("default", $default-widths, "none");
@@ -155,7 +155,7 @@ $lap-widths: (
 
 ### `fluid-point`
 
-#### The SCSS
+#### SCSS
 
 ~~~ scss
 @include fluid-point("palm") {
