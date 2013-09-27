@@ -6,7 +6,7 @@
 
 ### Classes
 
-#### `$fluid-classes`
+#### `$use-classes`
 
 If this is set to `true`, classes will be used in the generated code instead of placeholder selectors.
 

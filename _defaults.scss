@@ -6,13 +6,13 @@
 //
 // If this is set to `true`, classes will be used in the generated code
 // instead of placeholder selectors.
-$fluid-classes: true!default;
+$use-classes: true!default;
 
 // `x` is used as a variable name for the classes/placeholder selectors
 // since it's short.
 $x: unquote(".")!default;
 
-@if ($fluid-classes == false) {
+@if ($use-classes == false) {
   $x: unquote("%");
 }
 
