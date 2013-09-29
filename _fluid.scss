@@ -5,6 +5,14 @@
 // Import the fallback values
 @import "defaults";
 
+// `x` is used as a variable name for the classes/placeholder selectors
+// since it's short.
+$x: unquote(".")!default;
+
+@if ($use-classes == false) {
+  $x: unquote("%");
+}
+
 // Generates the widths
 //
 // Change it at your own risk!

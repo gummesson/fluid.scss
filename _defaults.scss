@@ -8,14 +8,6 @@
 // instead of placeholder selectors.
 $use-classes: true!default;
 
-// `x` is used as a variable name for the classes/placeholder selectors
-// since it's short.
-$x: unquote(".")!default;
-
-@if ($use-classes == false) {
-  $x: unquote("%");
-}
-
 // Breakpoints
 //
 // This variable is used in the `fluid-widths` and the `fluid-point` mixins
