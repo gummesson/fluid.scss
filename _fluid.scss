@@ -56,28 +56,28 @@ $x: unquote(".")!default;
             }
           }
 
-          // Generates the helper classes (ie: `hide`, `show` or `both`)
+          // Generates the helper classes (ie: `hidden`, `visible` or `both`)
           // if they"re enabled.
-          @if ($helper == "hide") {
-            #{$x}#{$breakpoint-name}--hide {
+          @if ($helper == "hidden") {
+            #{$x}#{$breakpoint-name}--hidden {
               visibility: hidden;
               display: none;
             }
           }
-          @else if ($helper == "show") {
-            #{$x}#{$breakpoint-name}--show {
+          @else if ($helper == "visible") {
+            #{$x}#{$breakpoint-name}--visible {
               visibility: visible;
               display: inline-block;
             }
           }
 
           @else if ($helper == "both") {
-            #{$x}#{$breakpoint-name}--hide {
+            #{$x}#{$breakpoint-name}--hidden {
               visibility: hidden;
               display: none;
             }
 
-            #{$x}#{$breakpoint-name}--show {
+            #{$x}#{$breakpoint-name}--visible {
               visibility: visible;
               display: inline-block;
             }

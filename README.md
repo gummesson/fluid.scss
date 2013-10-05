@@ -32,7 +32,7 @@ The widths used for a specific breakpoint. These can be renamed to anything you 
 @include fluid-widths($breakpoint, $widths, $helpers);
 ~~~
 
-The `$breakpoint` parameter needs to match the one defined in the `$breakpoints` variable (or `default` if you want to generate your default widths), the `$widths` parameter the relevant widths for your breakpoint and the `$helpers` parameter should be set to either `hide`, `show`, `both` or `none`.
+The `$breakpoint` parameter needs to match the one defined in the `$breakpoints` variable (or `default` if you want to generate your default widths), the `$widths` parameter the relevant widths for your breakpoint and the `$helpers` parameter should be set to either `hidden`, `visible`, `both` or `none`.
 
 ### `fluid-point`
 
@@ -84,13 +84,13 @@ $lap-widths: (
 ~~~ scss
 @include fluid-widths("default", $default-widths, "none");
 @include fluid-widths("lap", $lap-widths, "none");
-@include fluid-widths("palm", $palm-widths, "hide");
+@include fluid-widths("palm", $palm-widths, "hidden");
 ~~~
 
 ##### Markup
 
 ~~~ html
-<div class="one-half  lap--one-whole  palm--hide">
+<div class="one-half  lap--one-whole  palm--hidden">
   <!-- ... -->
 </div>
 ~~~
@@ -132,7 +132,7 @@ $lap-widths: (
 ~~~ scss
 @include fluid-widths("default", $default-widths, "none");
 @include fluid-widths("lap", $lap-widths, "none");
-@include fluid-widths("palm", $palm-widths, "hide");
+@include fluid-widths("palm", $palm-widths, "hidden");
 ~~~
 
 ##### SCSS
@@ -141,7 +141,7 @@ $lap-widths: (
 .content {
   @extend %one-half;
   @extend %lap--one-whole;
-  @extend %palm--hide;
+  @extend %palm--hidden;
 }
 ~~~
 
