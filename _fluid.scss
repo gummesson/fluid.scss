@@ -24,7 +24,7 @@ $x: unquote(".")!default;
   display: block;
 }
 
-// Generates the widths
+// Generate the widths
 //
 // Change it at your own risk!
 @mixin fluid-widths($name, $widths, $helper) {
@@ -67,8 +67,8 @@ $x: unquote(".")!default;
             }
           }
 
-          // Generates the helper classes (ie: `hidden`, `visible` or `both`)
-          // if they"re enabled.
+          // Generate the helper classes (ie: `hidden`, `visible` or `both`)
+          // if they're enabled.
           @if ($helper == "hidden") {
             #{$x}#{$breakpoint-name}--hidden {
               @include fluid-hidden();
@@ -100,7 +100,7 @@ $x: unquote(".")!default;
   }
 }
 
-// Generates the breakpoints
+// Generate the breakpoints
 //
 // Change it at your own risk!
 @mixin fluid-point($name) {
