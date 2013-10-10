@@ -7,7 +7,7 @@
 
 // `x` is used as a variable name for the classes/placeholder selectors
 // since it's short.
-$x: unquote(".")!default;
+$x: unquote(".");
 
 @if ($use-classes == false) {
   $x: unquote("%");
