@@ -67,7 +67,7 @@ $x: unquote(".")!default;
           @else if ($helper == "visible") {
             #{$x}#{$breakpoint-name}--visible {
               visibility: visible;
-              display: inline-block;
+              display: block;
             }
           }
 
@@ -79,7 +79,7 @@ $x: unquote(".")!default;
 
             #{$x}#{$breakpoint-name}--visible {
               visibility: visible;
-              display: inline-block;
+              display: block;
             }
           }
         }
