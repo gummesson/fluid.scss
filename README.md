@@ -53,29 +53,29 @@ The `$breakpoint` parameter needs to match the one defined in the `$breakpoints`
 
 ~~~ scss
 $breakpoints: (
-  ("palm", "(max-width: 480px)"),
-  ("lap", "(min-width: 481px) and (max-width: 1023px)")
+  palm: "(max-width: 480px)",
+  lap: "(min-width: 481px) and (max-width: 1023px)"
 );
 
 $default-widths: (
-  ("one-whole", "100%"),
-  ("three-quarters", "75%"),
-  ("two-thirds", "66.666%"),
-  ("one-half", "50%"),
-  ("one-third", "33.333%"),
-  ("one-quarter", "25%"),
+  one-whole: 100%,
+  three-quarters: 75%,
+  two-thirds: 66.666%,
+  one-half: 50%,
+  one-third: 33.333%,
+  one-quarter: 25%,
 );
 
 $palm-widths: (
-  ("one-whole", "100%"),
-  ("one-half", "50%")
+  one-whole: 100%,
+  one-half: 50%
 );
 
 $lap-widths: (
-  ("one-whole", "100%"),
-  ("three-quarters", "75%"),
-  ("one-half", "50%"),
-  ("one-quarter", "25%")
+  one-whole: 100%,
+  three-quarters: 75%,
+  one-half: 50%,
+  one-quarter: 25%
 );
 ~~~
 
@@ -101,29 +101,29 @@ $lap-widths: (
 
 ~~~ scss
 $breakpoints: (
-  ("palm", "(max-width: 480px)"),
-  ("lap", "(min-width: 481px) and (max-width: 1023px)")
+  palm: "(max-width: 480px)",
+  lap: "(min-width: 481px) and (max-width: 1023px)"
 );
 
 $default-widths: (
-  ("one-whole", "100%"),
-  ("three-quarters", "75%"),
-  ("two-thirds", "66.666%"),
-  ("one-half", "50%"),
-  ("one-third", "33.333%"),
-  ("one-quarter", "25%"),
+  one-whole: 100%,
+  three-quarters: 75%,
+  two-thirds: 66.666%,
+  one-half: 50%,
+  one-third: 33.333%,
+  one-quarter: 25%,
 );
 
 $palm-widths: (
-  ("one-whole", "100%"),
-  ("one-half", "50%")
+  one-whole: 100%,
+  one-half: 50%
 );
 
 $lap-widths: (
-  ("one-whole", "100%"),
-  ("three-quarters", "75%"),
-  ("one-half", "50%"),
-  ("one-quarter", "25%")
+  one-whole: 100%,
+  three-quarters: 75%,
+  one-half: 50%,
+  one-quarter: 25%
 );
 ~~~
 
@@ -167,37 +167,6 @@ $lap-widths: (
 body {
   @include fluid-point("lap") {
     color: blue;
-  }
-}
-~~~
-
-## Limitations
-
-In every variable list (ie: `$breakpoints`, `$default-widths` and the like) there has to be *atleast* two values set. This is due to a limitation in Sass where this:
-
-~~~ scss
-$list: (
-  ("foo", "bar")
-);
-~~~
-
-Returns the same list index as this:
-
-~~~ scss
-$list: (
-  ("foo", "bar"),
-  ("foo", "bar")
-);
-~~~
-
-Another issue is that in the former the item index (`nth`) is only one, while in the latter it's two. Since you can't (atleast to my knowledge) check the length of that particular index there's not much that can be done about it, I'm afraid.
-
-If you *really* don't want to generate more classes than necessary, you could use the `fluid-point` mixin and write them manually, like this:
-
-~~~ scss
-@include fluid-point("palm") {
-  .palm--one-whole {
-    width: 100%;
   }
 }
 ~~~
