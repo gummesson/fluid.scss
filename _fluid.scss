@@ -28,9 +28,11 @@ $x: unquote(".");
 //
 // Change it at your own risk!
 @mixin fluid-widths($breakpoint, $widths, $helpers) {
+  $found: false;
   // If the name of the breakpoint is `default`, just generate the widths
   // without a specific breakpoint name (ie: `.one-whole`).
   @if ($breakpoint == "default") {
+    $found: true;
     @each $name, $width in $widths {
       #{$x}#{$name} {
         width: $width;
@@ -43,6 +45,7 @@ $x: unquote(".");
     // If the breakpoint matches an actual one in the `$breakpoints` variable,
     // generate the media query.
       @if ($name == $breakpoint) {
+        $found: true;
         @media screen and #{$size} {
           @each $name, $width in $widths {
             #{$x}#{$breakpoint}--#{$name} {
@@ -68,10 +71,11 @@ $x: unquote(".");
             }
           }
         }
-      } @else {
-        @warn "Unrecognized breakpoint: #{$breakpoint}";
       }
     }
+  }
+  @if ($found == false) {
+    @warn "Unrecognized breakpoint: #{$breakpoint}";
   }
 }
 
