@@ -27,101 +27,70 @@ $x: unquote(".");
 // Generate the widths
 //
 // Change it at your own risk!
-@mixin fluid-widths($name, $widths, $helper) {
-  $breakpoint-found: false;
-
+@mixin fluid-widths($breakpoint, $widths, $helpers) {
   // If the name of the breakpoint is `default`, just generate the widths
   // without a specific breakpoint name (ie: `.one-whole`).
-  @if ($name == "default") {
-    $breakpoint-found: true;
-
-    @each $width in $widths {
-      $width-name: nth($width, 1);
-      $width-size: nth($width, 2);
-
-      #{$x}#{$width-name} {
-        width: #{$width-size};
+  @if ($breakpoint == "default") {
+    @each $name, $width in $widths {
+      ${x}#{$name} {
+        width: $width;
       }
     }
-  }
-
   // In all other cases, generate the widths with the breakpoint name in
-  // question in front of them (ie: `.palm--one-whole`).
-  @else {
-    @each $breakpoint in $breakpoints {
-      $breakpoint-name: nth($breakpoint, 1);
-      $breakpoint-size: nth($breakpoint, 2);
-
+  // question in front of them (ie: `.lap--one-whole`).
+  } @else {
+    @each $name, $size in $breakpoints {
     // If the breakpoint matches an actual one in the `$breakpoints` variable,
     // generate the media query.
-      @if ($name == $breakpoint-name) {
-        $breakpoint-found: true;
-
-        @media only screen and #{$breakpoint-size} {
-          @each $width in $widths {
-            $width-name: nth($width, 1);
-            $width-size: nth($width, 2);
-
-            #{$x}#{$breakpoint-name}--#{$width-name} {
-              width: #{$width-size};
+      @if ($name == $breakpoint) {
+        @media screen and #{$size} {
+          @each $name, $width in $widths {
+            ${x}#{$breakpoint}--#{$name} {
+              width: $width;
             }
           }
-
           // Generate the helper classes (ie: `hidden`, `visible` or `both`)
           // if they're enabled.
-          @if ($helper == "hidden") {
-            #{$x}#{$breakpoint-name}--hidden {
+          @if ($helpers == "hidden") {
+            ${x}#{$name}--hidden {
               @include fluid-hidden();
             }
-          }
-
-          @else if ($helper == "visible") {
-            #{$x}#{$breakpoint-name}--visible {
+          } @else if ($helpers == "visible") {
+            ${x}#{$name}--visible {
               @include fluid-visible();
             }
-          }
-
-          @else if ($helper == "both") {
-            #{$x}#{$breakpoint-name}--hidden {
-              @include fluid-hidden();
+          } @else if ($helpers == "both") {
+            ${x}#{$name}--hidden {
+              @include fluid-visible();
             }
-
-            #{$x}#{$breakpoint-name}--visible {
+            ${x}#{$name}--visible {
               @include fluid-visible();
             }
           }
         }
+      } @else {
+        @warn "Unrecognized breakpoint: #{$breakpoint}";
       }
     }
-  }
-
-  @if ($breakpoint-found == false) {
-    @warn "Unrecognized breakpoint: #{$name}";
   }
 }
 
 // Generate the breakpoints
 //
 // Change it at your own risk!
-@mixin fluid-point($name) {
-  $breakpoint-found: false;
-
-  @each $breakpoint in $breakpoints {
-    $breakpoint-name: nth($breakpoint, 1);
-    $breakpoint-size: nth($breakpoint, 2);
-
+@mixin fluid-breakpoint($breakpoint) {
+  $found: false;
+  @each $name, $size in $breakpoints {
     // If the breakpoint matches an actual one in the `$breakpoints` variable,
     // generate the media query.
-    @if ($name == $breakpoint-name) {
-      $breakpoint-found: true;
-
-      @media only screen and #{$breakpoint-size} {
+    @if ($name == $breakpoint) {
+      $found: true;
+      @media screen and #{$size} {
         @content;
       }
     }
   }
-
-  @if ($breakpoint-found == false) {
-    @warn "Unrecognized breakpoint: #{$name}";
+  @if ($found == false) {
+    @warn "Unrecognized breakpoint: #{$breakpoint}";
   }
 }
