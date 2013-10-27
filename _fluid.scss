@@ -61,7 +61,7 @@ $x: unquote(".");
             }
           } @else if ($helpers == "both") {
             #{$x}#{$name}--hidden {
-              @include fluid-visible();
+              @include fluid-hidden();
             }
             #{$x}#{$name}--visible {
               @include fluid-visible();
