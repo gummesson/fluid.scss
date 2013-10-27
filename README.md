@@ -2,6 +2,8 @@
 
 *fluid.scss* is a [Sass](http://sass-lang.com/)-based, [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)-aware, completely customizable fluid widths and breakpoint system. It works in IE8+ and it's inspired by the idea behind the widths system of [csswizardy-grids](https://github.com/csswizardry/csswizardry-grids).
 
+*NOTE:* in the release candidate version of Sass 3.3 the "maps" feature was introduced which makes working with these kinds of systems a breeze. Check out the [sass-3.3 branch](https://github.com/gummesson/fluid.scss/tree/sass-3.3) if you like living on the edge!
+
 ## Configuation
 
 ### Classes
