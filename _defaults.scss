@@ -13,11 +13,11 @@ $use-classes: true!default;
 // This variable is used in the `fluid-widths` and the `fluid-point` mixins
 // and it shouldn't be renamed. Feel free to change the breakpoints though!
 $breakpoints: (
-  ("palm", "(max-width: 480px)"),
-  ("lap", "(min-width: 481px) and (max-width: 1023px)"),
-  ("lap-and-up", "(min-width: 481px)"),
-  ("portable", "(max-width: 1023px)"),
-  ("desk", "(min-width: 1024px)")
+  palm: "(max-width: 480px)",
+  lap: "(min-width: 481px) and (max-width: 1023px)",
+  lap-and-up: "(min-width: 481px)",
+  portable: "(max-width: 1023px)",
+  desk: "(min-width: 1024px)"
 )!default;
 
 // The default widths 
@@ -26,20 +26,20 @@ $breakpoints: (
 // although I strongly recommended the use of the original name since
 // it's suitable.
 $default-widths: (
-  ("one-whole", "100%"),
-  ("nine-tenths", "90%"),
-  ("four-fifths", "80%"),
-  ("three-quarters", "75%"),
-  ("seven-tenths", "70%"),
-  ("two-thirds", "66.666%"),
-  ("three-fifths", "60%"),
-  ("one-half", "50%"),
-  ("two-fifths", "40%"),
-  ("one-third", "33.333%"),
-  ("three-tenths", "30%"),
-  ("one-quarter", "25%"),
-  ("one-fifth", "20%"),
-  ("one-tenth", "10%")
+  one-whole: 100%,
+  nine-tenths: 90%,
+  four-fifths: 80%,
+  three-quarters: 75%,
+  seven-tenths: 70%,
+  two-thirds: 66.666%,
+  three-fifths: 60%,
+  one-half: 50%,
+  two-fifths: 40%,
+  one-third: 33.333%,
+  three-tenths: 30%,
+  one-quarter: 25%,
+  one-fifth: 20%,
+  one-tenth: 10%
 )!default;
 
 // The widths for the `palm` breakpoint
@@ -47,8 +47,8 @@ $default-widths: (
 // This is a regular variable and can be renamed and modified. It's just
 // defined to provide a concrete example.
 $palm-widths: (
-  ("one-whole", "100%"),
-  ("one-half", "50%")
+  one-whole: 100%,
+  one-half: 50%
 )!default;
 
 // The widths for the `lap` breakpoint
@@ -56,10 +56,10 @@ $palm-widths: (
 // This is a regular variable and can be renamed and modified. It's just
 // defined to provide a concrete example.
 $lap-widths: (
-  ("one-whole", "100%"),
-  ("three-quarters", "75%"),
-  ("one-half", "50%"),
-  ("one-quarter", "25%")
+  one-whole: 100%,
+  three-quarters: 75%,
+  one-half: 50%,
+  one-quarter: 25%
 )!default;
 
 // The widths for the `portable` breakpoint
@@ -67,16 +67,16 @@ $lap-widths: (
 // This is a regular variable and can be renamed and modified. It's just
 // defined to provide a concrete example.
 $portable-widths: (
-  ("one-whole", "100%"),
-  ("four-fifths", "80%"),
-  ("three-quarters", "75%"),
-  ("two-thirds", "66.666%"),
-  ("three-fifths", "60%"),
-  ("one-half", "50%"),
-  ("two-fifths", "40%"),
-  ("one-third", "33.333%"),
-  ("one-quarter", "25%"),
-  ("one-fifth", "20%")
+  one-whole: 100%,
+  four-fifths: 80%,
+  three-quarters: 75%,
+  two-thirds: 66.666%,
+  three-fifths: 60%,
+  one-half: 50%,
+  two-fifths: 40%,
+  one-third: 33.333%,
+  one-quarter: 25%,
+  one-fifth: 20%
 )!default;
 
 // The widths for the `desk` breakpoint
