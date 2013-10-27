@@ -32,7 +32,7 @@ $x: unquote(".");
   // without a specific breakpoint name (ie: `.one-whole`).
   @if ($breakpoint == "default") {
     @each $name, $width in $widths {
-      ${x}#{$name} {
+      #{$x}#{$name} {
         width: $width;
       }
     }
@@ -45,25 +45,25 @@ $x: unquote(".");
       @if ($name == $breakpoint) {
         @media screen and #{$size} {
           @each $name, $width in $widths {
-            ${x}#{$breakpoint}--#{$name} {
+            #{$x}#{$breakpoint}--#{$name} {
               width: $width;
             }
           }
           // Generate the helper classes (ie: `hidden`, `visible` or `both`)
           // if they're enabled.
           @if ($helpers == "hidden") {
-            ${x}#{$name}--hidden {
+            #{$x}#{$name}--hidden {
               @include fluid-hidden();
             }
           } @else if ($helpers == "visible") {
-            ${x}#{$name}--visible {
+            #{$x}#{$name}--visible {
               @include fluid-visible();
             }
           } @else if ($helpers == "both") {
-            ${x}#{$name}--hidden {
+            #{$x}#{$name}--hidden {
               @include fluid-visible();
             }
-            ${x}#{$name}--visible {
+            #{$x}#{$name}--visible {
               @include fluid-visible();
             }
           }
@@ -78,7 +78,7 @@ $x: unquote(".");
 // Generate the breakpoints
 //
 // Change it at your own risk!
-@mixin fluid-breakpoint($breakpoint) {
+@mixin fluid-point($breakpoint) {
   $found: false;
   @each $name, $size in $breakpoints {
     // If the breakpoint matches an actual one in the `$breakpoints` variable,
